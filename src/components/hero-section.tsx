@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/config";
 
 export function HeroSection() {
   return (
@@ -12,8 +14,10 @@ export function HeroSection() {
           Bring Web2-level simplicity to your Web3 products with portable identity, seamless onboarding, and brand-powered personalization.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <Button size="lg" className="text-base">
-            Book a Demo
+          <Button size="lg" className="text-base" asChild>
+            <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
+              Book a Demo
+            </Link>
           </Button>
         </div>
       </div>

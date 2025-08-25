@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Paintbrush, LogOut, Palette, GitCompareArrows } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 export function Web3UsabilitySection() {
   return (
@@ -99,8 +101,10 @@ export function Web3UsabilitySection() {
           </div>
         </div>
 
-        <Button size="lg" >
-          Book a Demo
+        <Button size="lg" asChild>
+          <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
+            Book a Demo
+          </Link>
         </Button>
       </div>
     </section>

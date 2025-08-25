@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/config";
 
 export function HowItWorksSection() {
   return (
@@ -63,8 +65,10 @@ export function HowItWorksSection() {
                 </div>
               </div>
             </div>
-              <Button variant="outline" size="lg" className={"w-fit"}>
-              Try the Playground
+              <Button variant="outline" size="lg" className={"w-fit"} asChild>
+              <Link href={siteConfig.playground} target="_blank" rel="noopener noreferrer">
+                Try the Playground
+              </Link>
             </Button>
           </div>
 
@@ -121,8 +125,10 @@ export function HowItWorksSection() {
               </div>
             </div>
 
-            <Button variant="outline" size="lg" className={"w-fit"}>
-              Check our Docs
+            <Button variant="outline" size="lg" className={"w-fit"} asChild>
+              <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer">
+                Check our Docs
+              </Link>
             </Button>
           </div>
         </div>

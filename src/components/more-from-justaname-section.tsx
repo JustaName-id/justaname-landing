@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { siteConfig } from "@/lib/config";
 
 export function MoreFromJustaNameSection() {
   return (
@@ -14,7 +16,12 @@ export function MoreFromJustaNameSection() {
           {/* First Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* ENSvolution */}
-            <div className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5">
+            <Link
+              href={siteConfig.ensvolution}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
                   src="/more/ensvolution.png"
@@ -29,10 +36,15 @@ export function MoreFromJustaNameSection() {
                   ENSvolution
                 </h3>
               </div>
-            </div>
+            </Link>
 
             {/* Letstalk.wtf */}
-            <div className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5">
+            <Link
+              href={siteConfig.letstalk}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
                   src="/more/letstalk.png"
@@ -47,13 +59,18 @@ export function MoreFromJustaNameSection() {
                   Letstalk.wtf
                 </h3>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Second Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Explorer */}
-            <div className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5">
+            <Link
+              href={siteConfig.explorer}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
                   src="/more/explorer.png"
@@ -68,10 +85,15 @@ export function MoreFromJustaNameSection() {
                   Explorer
                 </h3>
               </div>
-            </div>
+            </Link>
 
             {/* Chrome Extension for X */}
-            <div className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5">
+            <Link
+              href={siteConfig.chromeExtension}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-200 rounded-md p-5 flex flex-col gap-5 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
                   src="/more/chrome.png"
@@ -86,7 +108,7 @@ export function MoreFromJustaNameSection() {
                   Chrome Extension for X
                 </h3>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { siteConfig } from "@/lib/config";
 
 export function OnboardingStepsSection() {
   return (
@@ -76,8 +78,10 @@ export function OnboardingStepsSection() {
           </div>
         </div>
 
-        <Button>
-          Get Started Now
+        <Button asChild>
+          <Link href={siteConfig.getStarted} target="_blank" rel="noopener noreferrer">
+            Get Started Now
+          </Link>
         </Button>
       </div>
     </section>

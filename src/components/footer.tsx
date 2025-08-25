@@ -14,42 +14,86 @@ export function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5 lg:gap-5">
             {/* Column 1 */}
             <div className="flex flex-col gap-5">
-              <Link href={siteConfig.home} className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.home}
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Home
               </Link>
-              <Link href={siteConfig.docs} className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.docs}
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Documentation
               </Link>
-              <Link href={siteConfig.explorer} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.explorer}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Explorer
               </Link>
-              <Link href={siteConfig.dashboard} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.dashboard}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Dashboard
               </Link>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-5">
-              <Link href={siteConfig.playground} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.playground}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Playground
               </Link>
-              <Link href={siteConfig.github} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Github
               </Link>
-              <Link href={siteConfig.contact} className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.contact}
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Contact Us
               </Link>
             </div>
 
             {/* Column 3 */}
             <div className="flex flex-col gap-5">
-              <Link href={siteConfig.xmtpAgents} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.xmtpAgents}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 XMTP Agents
               </Link>
-              <Link href={siteConfig.ensvolution} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.ensvolution}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 ENSvolution
               </Link>
-              <Link href={siteConfig.letstalk} target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors">
+              <Link
+                href={siteConfig.letstalk}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+              >
                 Letstalk
               </Link>
             </div>
@@ -65,11 +109,11 @@ export function Footer() {
                 with our newsletter
               </p>
             </div>
-            
+
             <div className="flex gap-2 w-full lg:w-[377px]">
-              <Input 
-                type="email" 
-                placeholder="Email Address" 
+              <Input
+                type="email"
+                placeholder="Email Address"
                 className="flex-1"
               />
               <Button className="bg-zinc-900 hover:bg-zinc-800 text-white">
@@ -83,21 +127,31 @@ export function Footer() {
         <div className="flex flex-col items-center gap-2.5 py-5 border-t border-zinc-200">
           {/* Social Icons */}
           <div className="flex gap-5 items-center">
-            <Link href={siteConfig.twitter} target="_blank" className="text-zinc-900 hover:text-zinc-600 transition-colors">
+            <Link
+              href={siteConfig.twitter}
+              target="_blank"
+              className="text-zinc-900 hover:text-zinc-600 transition-colors"
+            >
               <Twitter className="w-6 h-6" />
             </Link>
-            <Link href={siteConfig.github} target="_blank" className="text-zinc-900 hover:text-zinc-600 transition-colors">
+            <Link
+              href={siteConfig.github}
+              target="_blank"
+              className="text-zinc-900 hover:text-zinc-600 transition-colors"
+            >
               <Github className="w-6 h-6" />
             </Link>
-            <Link href={siteConfig.linkedin} target="_blank" className="text-zinc-900 hover:text-zinc-600 transition-colors">
+            <Link
+              href={siteConfig.linkedin}
+              target="_blank"
+              className="text-zinc-900 hover:text-zinc-600 transition-colors"
+            >
               <Linkedin className="w-6 h-6" />
             </Link>
           </div>
-          
+
           {/* Copyright */}
-          <p className="text-sm text-black">
-            Built by the Team at justalab
-          </p>
+          <p className="text-sm text-black">Built by the Team at JustaLab</p>
           <p className="text-xs font-bold text-black">
             JustaName, Copyright, 2025. All Rights Reserved.
           </p>
