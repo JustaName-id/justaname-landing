@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 
 export function Web3UsabilitySection() {
   return (
-    <section className="px-5 py-16  w-full bg-white">
+    <section className="px-5 py-10  w-full bg-white">
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
         <div className="flex flex-col gap-5 items-center py-2.5 lg:py-10 w-full">
           <h2 className="text-3xl lg:text-4xl font-normal text-zinc-900 text-center leading-tight lg:leading-[48px]">
@@ -101,9 +101,9 @@ export function Web3UsabilitySection() {
           </div>
         </div>
 
-        <Button size="lg" asChild>
-          <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
-            Book a Demo
+        <Button variant="outline" size="lg" className="w-fit" asChild>
+          <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer">
+            Check our Docs
           </Link>
         </Button>
       </div>

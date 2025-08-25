@@ -12,7 +12,7 @@ import { MoreFromJustaNameSection } from "@/components/more-from-justaname-secti
 
 export default function Home() {
   return (
-    <main className="min-h-screen gap-[150px] flex flex-col">
+    <main className="min-h-screen gap-20 flex flex-col">
       <HeroSection />
       <TrustedBySection />
       <SolutionsSection />

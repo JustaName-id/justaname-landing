@@ -3,7 +3,7 @@ import { Eye, Palette, Blocks } from "lucide-react";
 
 export function FeaturesSection() {
   return (
-    <section className="px-5 py-16  w-full bg-white">
+    <section className="px-5 py-10  w-full bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         {/* Left side - Illustration */}
         <div className="relative bg-blue-700 rounded-xl overflow-hidden h-[400px] lg:h-[650px] flex items-center justify-center">
