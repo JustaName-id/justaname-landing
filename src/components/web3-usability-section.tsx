@@ -1,14 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Paintbrush, LogOut, Palette, GitCompareArrows } from "lucide-react";
 import { siteConfig } from "@/lib/config";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function Web3UsabilitySection() {
+  const { ref: titleRef, isInView: titleInView } = useScrollAnimation();
+  const { ref: card1Ref, isInView: card1InView } = useScrollAnimation({ rootMargin: "0px 0px -50px 0px" });
+  const { ref: card2Ref, isInView: card2InView } = useScrollAnimation({ rootMargin: "0px 0px -50px 0px" });
+  const { ref: card3Ref, isInView: card3InView } = useScrollAnimation({ rootMargin: "0px 0px -50px 0px" });
+  const { ref: card4Ref, isInView: card4InView } = useScrollAnimation({ rootMargin: "0px 0px -50px 0px" });
+  const { ref: buttonRef, isInView: buttonInView } = useScrollAnimation({ rootMargin: "0px 0px -50px 0px" });
+
   return (
     <section className="px-5 py-10  w-full bg-white">
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
         <div className="flex flex-col gap-5 items-center py-2.5 lg:py-10 w-full">
-          <h2 className="text-3xl lg:text-4xl font-normal text-zinc-900 text-center leading-tight lg:leading-[48px]">
+          <h2
+            ref={titleRef}
+            className={`text-3xl lg:text-4xl font-normal text-zinc-900 text-center leading-tight lg:leading-[48px] transition-all duration-800 ease-out ${titleInView
+                ? 'opacity-100 transform translate-y-0'
+                : 'opacity-0 transform translate-y-8'
+              }`}
+          >
             Web3 Usability Without Compromise
           </h2>
         </div>
@@ -17,7 +33,14 @@ export function Web3UsabilitySection() {
           {/* First Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Brand-powered identity */}
-            <div className="border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5">
+            <div
+              ref={card1Ref}
+              className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card1InView
+                  ? 'opacity-100 transform translate-y-0'
+                  : 'opacity-0 transform translate-y-8'
+                }`}
+              style={{ transitionDelay: card1InView ? '100ms' : '0ms' }}
+            >
               <div className="bg-blue-50 p-2.5 rounded-md w-fit">
                 <Paintbrush className="w-9 h-9 text-blue-700" />
               </div>
@@ -37,7 +60,14 @@ export function Web3UsabilitySection() {
             </div>
 
             {/* Seamless onboarding */}
-            <div className="border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5">
+            <div
+              ref={card2Ref}
+              className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card2InView
+                  ? 'opacity-100 transform translate-y-0'
+                  : 'opacity-0 transform translate-y-8'
+                }`}
+              style={{ transitionDelay: card2InView ? '200ms' : '0ms' }}
+            >
               <div className="bg-emerald-50 p-2.5 rounded-md w-fit">
                 <LogOut className="w-9 h-9 text-emerald-700" />
               </div>
@@ -60,7 +90,14 @@ export function Web3UsabilitySection() {
           {/* Second Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Personalization */}
-            <div className="border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5">
+            <div
+              ref={card3Ref}
+              className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card3InView
+                  ? 'opacity-100 transform translate-y-0'
+                  : 'opacity-0 transform translate-y-8'
+                }`}
+              style={{ transitionDelay: card3InView ? '300ms' : '0ms' }}
+            >
               <div className="bg-purple-50 p-2.5 rounded-md w-fit">
                 <Palette className="w-9 h-9 text-purple-700" />
               </div>
@@ -80,7 +117,14 @@ export function Web3UsabilitySection() {
             </div>
 
             {/* Interoperability */}
-            <div className="border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5">
+            <div
+              ref={card4Ref}
+              className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card4InView
+                  ? 'opacity-100 transform translate-y-0'
+                  : 'opacity-0 transform translate-y-8'
+                }`}
+              style={{ transitionDelay: card4InView ? '400ms' : '0ms' }}
+            >
               <div className="bg-sky-50 p-2.5 rounded-md w-fit">
                 <GitCompareArrows className="w-9 h-9 text-sky-700" />
               </div>
@@ -101,11 +145,20 @@ export function Web3UsabilitySection() {
           </div>
         </div>
 
-        <Button variant="outline" size="lg" className="w-fit" asChild>
-          <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer">
-            Check our Docs
-          </Link>
-        </Button>
+        <div
+          ref={buttonRef}
+          className={`transition-all duration-800 ease-out ${buttonInView
+              ? 'opacity-100 transform translate-y-0'
+              : 'opacity-0 transform translate-y-8'
+            }`}
+          style={{ transitionDelay: buttonInView ? '500ms' : '0ms' }}
+        >
+          <Button variant="outline" size="lg" className="w-fit" asChild>
+            <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer">
+              Check our Docs
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
