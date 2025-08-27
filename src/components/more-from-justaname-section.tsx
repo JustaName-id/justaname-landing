@@ -24,7 +24,7 @@ export function MoreFromJustaNameSection() {
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
-                  src="/more/ensvolution.png"
+                  src="/more/ensvolution.webp"
                   alt="ENSvolution"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -47,7 +47,7 @@ export function MoreFromJustaNameSection() {
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
-                  src="/more/letstalk.png"
+                  src="/more/letstalk.webp"
                   alt="Letstalk.wtf"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -73,7 +73,7 @@ export function MoreFromJustaNameSection() {
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
-                  src="/more/explorer.png"
+                  src="/more/explorer.webp"
                   alt="Explorer"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -96,7 +96,7 @@ export function MoreFromJustaNameSection() {
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
-                  src="/more/chrome.png"
+                  src="/more/chrome.webp"
                   alt="Chrome Extension for X"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

@@ -1,10 +1,69 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Github, Linkedin, Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/config";
+import { useState } from "react";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email.trim()) {
+      setMessage("Please enter your email address");
+      setIsError(true);
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setMessage("Please enter a valid email address");
+      setIsError(true);
+      return;
+    }
+
+    setIsLoading(true);
+    setMessage("");
+    setIsError(false);
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setMessage("Successfully subscribed to our newsletter!");
+        setIsError(false);
+        setEmail("");
+      } else {
+        setMessage("Failed to subscribe. Please try again.");
+        setIsError(true);
+      }
+    } catch (error) {
+      setMessage("An error occurred. Please try again.");
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-slate-50 px-5 lg:px-10 py-10 lg:py-20 w-full">
       <div className="max-w-8xl mx-auto flex flex-col gap-10">
@@ -110,16 +169,34 @@ export function Footer() {
               </p>
             </div>
 
-            <div className="flex gap-2 w-full lg:w-[377px]">
-              <Input
-                type="email"
-                placeholder="Email Address"
-                className="flex-1"
-              />
-              <Button className="bg-zinc-900 hover:bg-zinc-800 text-white">
-                Subscribe
-              </Button>
-            </div>
+            <form onSubmit={handleSubmit} className="w-full lg:w-[377px]">
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Email Address"
+                  className="flex-1"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isLoading}
+                />
+                <Button
+                  type="submit"
+                  className="bg-zinc-900 hover:bg-zinc-800 text-white cursor-pointer"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    "Subscribe"
+                  )}
+                </Button>
+              </div>
+              {message && (
+                <p className={`text-sm mt-2 ${isError ? 'text-red-600' : 'text-green-600'}`}>
+                  {message}
+                </p>
+              )}
+            </form>
           </div>
         </div>
 

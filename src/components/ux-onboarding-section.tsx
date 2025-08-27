@@ -62,7 +62,7 @@ export function UxOnboardingSection() {
           </div>
           {/* You can replace this with your actual image */}
           <Image
-            src="/ux-first-onboarding.png"
+            src="/ux-first-onboarding.webp"
             alt="UX-First Onboarding"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"

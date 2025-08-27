@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function TrustedBySection() {
   return (
-    <section className="flex flex-col gap-6 items-center justify-center px-5 py-10 w-full">
+    <section className="flex flex-col gap-6 items-center justify-center px-5 py-10 w-full bg-[url('/trusted/section-bg.webp')] bg-cover bg-center">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-center text-zinc-900 max-w-7xl">
         Trusted by Forward-Thinking Teams in the Web3 Ecosystem
       </h2>
@@ -12,7 +12,7 @@ export function TrustedBySection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10 items-center justify-items-center w-full">
           <div className="relative h-12 lg:h-16 w-32 lg:w-48">
             <Image
-              src="/trusted/yodl.png"
+              src="/trusted/yodl.webp"
               alt="Yodl"
               fill
               sizes="(max-width: 768px) 160px, 192px"
@@ -21,7 +21,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-16 w-32 lg:w-48">
             <Image
-              src="/trusted/peanut.png"
+              src="/trusted/peanut.webp"
               alt="Peanut"
               fill
               sizes="(max-width: 768px) 160px, 192px"
@@ -30,7 +30,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-16 w-32 lg:w-48">
             <Image
-              src="/trusted/aurora.png"
+              src="/trusted/aurora.webp"
               alt="Aurora"
               fill
               sizes="(max-width: 768px) 160px, 192px"
@@ -39,7 +39,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-14 w-32 lg:w-44">
             <Image
-              src="/trusted/ipe-city.png"
+              src="/trusted/ipe-city.webp"
               alt="IPE city"
               fill
               sizes="(max-width: 768px) 128px, 176px"
@@ -52,7 +52,7 @@ export function TrustedBySection() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 lg:gap-10 items-center justify-items-center w-full">
           <div className="relative h-12 lg:h-20 w-36 lg:w-64">
             <Image
-              src="/trusted/bga.png"
+              src="/trusted/bga.webp"
               alt="Blockchain Alliance"
               fill
               sizes="(max-width: 768px) 144px, 256px"
@@ -61,7 +61,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-16 w-28 lg:w-36">
             <Image
-              src="/trusted/efp.png"
+              src="/trusted/efp.webp"
               alt="Ethereum Follow Protocol"
               fill
               sizes="(max-width: 768px) 112px, 144px"
@@ -70,7 +70,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-14 w-32 lg:w-48">
             <Image
-              src="/trusted/xmtp.png"
+              src="/trusted/xmtp.webp"
               alt="XMTP"
               fill
               sizes="(max-width: 768px) 128px, 192px"
@@ -79,7 +79,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-16 w-36 lg:w-52">
             <Image
-              src="/trusted/talent-protocol.png"
+              src="/trusted/talent-protocol.webp"
               alt="Talent Protocol"
               fill
               sizes="(max-width: 768px) 144px, 208px"
@@ -88,7 +88,7 @@ export function TrustedBySection() {
           </div>
           <div className="relative h-12 lg:h-16 w-12 lg:w-16">
             <Image
-              src="/trusted/web3bio.png"
+              src="/trusted/web3bio.webp"
               alt="Web3.bio"
               fill
               sizes="(max-width: 768px) 48px, 64px"

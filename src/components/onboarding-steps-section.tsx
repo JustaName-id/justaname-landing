@@ -26,7 +26,7 @@ export function OnboardingStepsSection() {
             </div>
             <div className="h-[200px] relative rounded-md overflow-hidden">
               <Image
-                src="/onboarding/setup.png"
+                src="/onboarding/setup.webp"
                 alt="Set up your workspace"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -47,7 +47,7 @@ export function OnboardingStepsSection() {
             </div>
             <div className="h-[200px] bg-blue-700 relative rounded-[5px] overflow-hidden">
               <Image
-                  src="/onboarding/configure.png"
+                src="/onboarding/configure.webp"
                 alt="Configure your ENS"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -68,7 +68,7 @@ export function OnboardingStepsSection() {
             </div>
             <div className="h-[200px] bg-sky-800 relative rounded-md overflow-hidden">
               <Image
-                  src="/onboarding/api-key.png"
+                src="/onboarding/api-key.webp"
                 alt="Issue an API key"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"

@@ -16,7 +16,7 @@ export function TestimonialsSection() {
             {/* M Tweet */}
             <div className=" overflow-hidden relative">
               <Image
-                src="/tweets/m.png"
+                src="/tweets/m.webp"
                 alt="M testimonial"
                 width={600}
                 height={220}
@@ -27,7 +27,7 @@ export function TestimonialsSection() {
             {/* ENS DAO Tweet */}
             <div className=" overflow-hidden relative">
               <Image
-                src="/tweets/ensdao.png"
+                src="/tweets/ensdao.webp"
                 alt="ENS DAO testimonial"
                 width={600}
                 height={220}
@@ -38,7 +38,7 @@ export function TestimonialsSection() {
             {/* Yodl Tweet */}
             <div className=" overflow-hidden relative">
               <Image
-                src="/tweets/yodl.png"
+                src="/tweets/yodl.webp"
                 alt="Yodl testimonial"
                 width={600}
                 height={300}
@@ -52,7 +52,7 @@ export function TestimonialsSection() {
             {/* Peanut Tweet */}
             <div className=" overflow-hidden relative">
               <Image
-                src="/tweets/peanut.png"
+                src="/tweets/peanut.webp"
                 alt="Peanut Protocol testimonial"
                 width={600}
                 height={450}
@@ -63,7 +63,7 @@ export function TestimonialsSection() {
             {/* Balaji Tweet */}
             <div className=" overflow-hidden relative">
               <Image
-                src="/tweets/balaji.png"
+                src="/tweets/balaji.webp"
                 alt="Balaji testimonial"
                 width={600}
                 height={600}

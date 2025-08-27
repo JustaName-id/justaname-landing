@@ -12,8 +12,8 @@ export function FeaturesSection() {
             <p className="text-white/50 text-lg">Illustration Placeholder</p>
           </div>
           {/* You can replace this with your actual image */}
-            <Image
-            src="/features-illustration.png"
+          <Image
+            src="/features-illustration.webp"
             alt="Branded Subname Integration"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
