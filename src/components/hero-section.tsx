@@ -11,11 +11,16 @@ export function HeroSection() {
           Identity-First Web3 Experiences Your Users Will Love
         </h1>
         <p className="text-sm sm:text-base font-medium leading-normal text-zinc-700 text-center lg:text-left opacity-0 animate-fade-in-up animation-delay-200">
-          Bring Web2-level simplicity to your Web3 products with portable identity, seamless onboarding, and brand-powered personalization.
+          Bring Web2-level simplicity to your Web3 products with portable
+          identity, seamless onboarding, and brand-powered personalization.
         </p>
         <div className="flex justify-center lg:justify-start opacity-0 animate-fade-in-up animation-delay-300">
           <Button size="lg" className="text-base" asChild>
-            <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={siteConfig.bookDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book a Demo
             </Link>
           </Button>
@@ -25,7 +30,7 @@ export function HeroSection() {
       <div className="relative w-full max-w-[600px] lg:w-[600px] h-[300px] sm:h-[400px] lg:h-[450px] flex-shrink-0 opacity-0 animate-fade-in-right animation-delay-400">
         <Image
           src="/hero-section.svg"
-          alt="JustAName Web3 Identity Platform"
+          alt="JustaName Web3 Identity Platform"
           fill
           priority
           className="object-contain"

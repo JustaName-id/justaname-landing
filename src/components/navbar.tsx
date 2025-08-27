@@ -4,7 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { siteConfig } from "@/lib/config";
@@ -23,15 +29,15 @@ export function Navbar() {
         <Link href="/" className="flex items-center">
           <Image
             src="/justaname-logo.svg"
-            alt="JustAName"
+            alt="JustaName"
             width={140}
             height={44}
             priority
             style={{
-              width: 'auto',
-              height: 'auto',
-              maxWidth: '140px',
-              maxHeight: '44px'
+              width: "auto",
+              height: "auto",
+              maxWidth: "140px",
+              maxHeight: "44px",
             }}
           />
         </Link>
@@ -39,9 +45,9 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.href}
-              href={link.href} 
+              href={link.href}
               className="text-base text-zinc-900 hover:text-zinc-700 transition-colors"
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
@@ -49,22 +55,23 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          
+
           <div className="flex items-center gap-3">
-            <Button 
-              variant="outline"
-              size="lg"
-              asChild
-            >
-              <Link href={siteConfig.getStarted} target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg" asChild>
+              <Link
+                href={siteConfig.getStarted}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Get Started
               </Link>
             </Button>
-            <Button 
-              size="lg"
-              asChild
-            >
-              <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" asChild>
+              <Link
+                href={siteConfig.bookDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Book a Demo
               </Link>
             </Button>
@@ -79,12 +86,14 @@ export function Navbar() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          
+
           {/* Mobile Menu Content */}
           <SheetContent side="right" className="w-full sm:w-[400px] p-0">
             <VisuallyHidden>
               <SheetTitle>Navigation Menu</SheetTitle>
-              <SheetDescription>Navigate through JustaName pages and resources</SheetDescription>
+              <SheetDescription>
+                Navigate through JustaName pages and resources
+              </SheetDescription>
             </VisuallyHidden>
             <div className="flex flex-col h-full">
               {/* Header */}
@@ -92,19 +101,19 @@ export function Navbar() {
                 <Link href="/" onClick={() => setIsOpen(false)}>
                   <Image
                     src="/justaname-logo.svg"
-                    alt="JustAName"
+                    alt="JustaName"
                     width={120}
                     height={38}
                     style={{
-                      width: 'auto',
-                      height: 'auto',
-                      maxWidth: '120px',
-                      maxHeight: '38px'
+                      width: "auto",
+                      height: "auto",
+                      maxWidth: "120px",
+                      maxHeight: "38px",
                     }}
                   />
                 </Link>
               </div>
-              
+
               {/* Navigation Links */}
               <div className="flex-1 overflow-y-auto">
                 <div className="px-6 py-6">
@@ -127,24 +136,32 @@ export function Navbar() {
 
               {/* Action Buttons */}
               <div className="border-t border-zinc-200 px-6 py-6 space-y-3">
-                <Button 
+                <Button
                   variant="outline"
                   size="lg"
                   className="w-full h-12 text-base"
                   asChild
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href={siteConfig.getStarted} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={siteConfig.getStarted}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Get Started
                   </Link>
                 </Button>
-                <Button 
+                <Button
                   size="lg"
                   className="w-full h-12 text-base"
                   asChild
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={siteConfig.bookDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Book a Demo
                   </Link>
                 </Button>
