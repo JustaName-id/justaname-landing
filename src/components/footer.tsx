@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Twitter, Github, Linkedin, Loader2 } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { useState } from "react";
+import { getAnalyticsClient } from "../../analytics";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -76,12 +77,14 @@ export function Footer() {
               <Link
                 href={siteConfig.home}
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("LOGO_CLICKED", {})}
               >
                 Home
               </Link>
               <Link
                 href={siteConfig.docs}
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("DOCS_CLICKED", {})}
               >
                 Documentation
               </Link>
@@ -90,6 +93,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("APP_CLICKED", {})}
               >
                 Explorer
               </Link>
@@ -98,6 +102,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("ADMIN_CLICKED", {})}
               >
                 Dashboard
               </Link>
@@ -110,6 +115,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("DEMO_CLICKED", {})}
               >
                 Playground
               </Link>
@@ -118,12 +124,14 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("GITHUB_CLICKED", {})}
               >
                 Github
               </Link>
               <Link
                 href={siteConfig.contact}
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("CONTACT_US_CLICKED", {})}
               >
                 Contact Us
               </Link>
@@ -136,6 +144,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("AI_AGENT_CLICKED", {})}
               >
                 XMTP Agents
               </Link>
@@ -144,6 +153,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("ENSVOLUTION_CLICKED", {})}
               >
                 ENSvolution
               </Link>
@@ -152,6 +162,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base lg:text-lg text-zinc-900 hover:text-zinc-600 transition-colors"
+                onClick={() => getAnalyticsClient().track("LETS_TALK_CLICKED", {})}
               >
                 Letstalk
               </Link>
@@ -208,6 +219,7 @@ export function Footer() {
               href={siteConfig.twitter}
               target="_blank"
               className="text-zinc-900 hover:text-zinc-600 transition-colors"
+              onClick={() => getAnalyticsClient().track("TWITTER_CLICKED", {})}
             >
               <Twitter className="w-6 h-6" />
             </Link>
@@ -215,6 +227,7 @@ export function Footer() {
               href={siteConfig.github}
               target="_blank"
               className="text-zinc-900 hover:text-zinc-600 transition-colors"
+              onClick={() => getAnalyticsClient().track("GITHUB_CLICKED", {})}
             >
               <Github className="w-6 h-6" />
             </Link>
@@ -222,6 +235,7 @@ export function Footer() {
               href={siteConfig.linkedin}
               target="_blank"
               className="text-zinc-900 hover:text-zinc-600 transition-colors"
+              onClick={() => getAnalyticsClient().track("LINKEDIN_CLICKED", {})}
             >
               <Linkedin className="w-6 h-6" />
             </Link>
