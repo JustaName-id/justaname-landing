@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
+import { getAnalyticsClient } from "../../analytics";
 
 export function HeroSection() {
   return (
@@ -20,6 +21,7 @@ export function HeroSection() {
               href={siteConfig.bookDemo}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => getAnalyticsClient().track("BOOK_DEMO_CLICKED", {})}
             >
               Book a Demo
             </Link>

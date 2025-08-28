@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Paintbrush, LogOut, Palette, GitCompareArrows } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { getAnalyticsClient } from "../../analytics";
 
 export function Web3UsabilitySection() {
   const { ref: titleRef, isInView: titleInView } = useScrollAnimation();
@@ -21,8 +22,8 @@ export function Web3UsabilitySection() {
           <h2
             ref={titleRef}
             className={`text-3xl lg:text-4xl font-normal text-zinc-900 text-center leading-tight lg:leading-[48px] transition-all duration-800 ease-out ${titleInView
-                ? 'opacity-100 transform translate-y-0'
-                : 'opacity-0 transform translate-y-8'
+              ? 'opacity-100 transform translate-y-0'
+              : 'opacity-0 transform translate-y-8'
               }`}
           >
             Web3 Usability Without Compromise
@@ -36,8 +37,8 @@ export function Web3UsabilitySection() {
             <div
               ref={card1Ref}
               className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card1InView
-                  ? 'opacity-100 transform translate-y-0'
-                  : 'opacity-0 transform translate-y-8'
+                ? 'opacity-100 transform translate-y-0'
+                : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card1InView ? '100ms' : '0ms' }}
             >
@@ -63,8 +64,8 @@ export function Web3UsabilitySection() {
             <div
               ref={card2Ref}
               className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card2InView
-                  ? 'opacity-100 transform translate-y-0'
-                  : 'opacity-0 transform translate-y-8'
+                ? 'opacity-100 transform translate-y-0'
+                : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card2InView ? '200ms' : '0ms' }}
             >
@@ -93,8 +94,8 @@ export function Web3UsabilitySection() {
             <div
               ref={card3Ref}
               className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card3InView
-                  ? 'opacity-100 transform translate-y-0'
-                  : 'opacity-0 transform translate-y-8'
+                ? 'opacity-100 transform translate-y-0'
+                : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card3InView ? '300ms' : '0ms' }}
             >
@@ -120,8 +121,8 @@ export function Web3UsabilitySection() {
             <div
               ref={card4Ref}
               className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-5 transition-all duration-800 ease-out ${card4InView
-                  ? 'opacity-100 transform translate-y-0'
-                  : 'opacity-0 transform translate-y-8'
+                ? 'opacity-100 transform translate-y-0'
+                : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card4InView ? '400ms' : '0ms' }}
             >
@@ -148,13 +149,13 @@ export function Web3UsabilitySection() {
         <div
           ref={buttonRef}
           className={`transition-all duration-800 ease-out ${buttonInView
-              ? 'opacity-100 transform translate-y-0'
-              : 'opacity-0 transform translate-y-8'
+            ? 'opacity-100 transform translate-y-0'
+            : 'opacity-0 transform translate-y-8'
             }`}
           style={{ transitionDelay: buttonInView ? '500ms' : '0ms' }}
         >
           <Button variant="outline" size="lg" className="w-fit" asChild>
-            <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer">
+            <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer" onClick={() => getAnalyticsClient().track("DOCS_CLICKED", {})}>
               Check our Docs
             </Link>
           </Button>

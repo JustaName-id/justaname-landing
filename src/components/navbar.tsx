@@ -14,19 +14,23 @@ import {
 import { Menu } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { siteConfig } from "@/lib/config";
+import { getAnalyticsClient } from "../../analytics";
+import { DOCS_CLICKED } from "../../analytics/events/navigation/docs-clicked";
+import { DEMO_CLICKED } from "../../analytics/events/navigation/demo-clicked";
+import { EVENTS } from "../../analytics/events";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: siteConfig.docs, label: "Docs", external: true },
-    { href: siteConfig.playground, label: "Playground", external: true },
+    { href: siteConfig.docs, label: "Docs", external: true, event: DOCS_CLICKED },
+    { href: siteConfig.playground, label: "Playground", external: true, event: DEMO_CLICKED },
   ];
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between px-5 py-6 w-full bg-white border-b border-zinc-100">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" onClick={() => getAnalyticsClient().track("LOGO_CLICKED", {})}>
           <Image
             src="/justaname-logo.svg"
             alt="JustaName"
@@ -51,6 +55,7 @@ export function Navbar() {
               className="text-base text-zinc-900 hover:text-zinc-700 transition-colors"
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
+              onClick={() => getAnalyticsClient().track(link.event as keyof typeof EVENTS, {})}
             >
               {link.label}
             </Link>
@@ -62,6 +67,7 @@ export function Navbar() {
                 href={siteConfig.getStarted}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => getAnalyticsClient().track("ADMIN_CLICKED", {})}
               >
                 Get Started
               </Link>
@@ -71,6 +77,7 @@ export function Navbar() {
                 href={siteConfig.bookDemo}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => getAnalyticsClient().track("BOOK_DEMO_CLICKED", {})}
               >
                 Book a Demo
               </Link>
@@ -98,7 +105,10 @@ export function Navbar() {
             <div className="flex flex-col h-full">
               {/* Header */}
               <div className="px-6 py-6 border-b border-zinc-200">
-                <Link href="/" onClick={() => setIsOpen(false)}>
+                <Link href="/" onClick={() => {
+                  setIsOpen(false)
+                  getAnalyticsClient().track("LOGO_CLICKED", {})
+                }}>
                   <Image
                     src="/justaname-logo.svg"
                     alt="JustaName"
@@ -125,7 +135,10 @@ export function Navbar() {
                         className="block px-4 py-3 text-base font-medium text-zinc-900 hover:bg-zinc-50 rounded-lg transition-colors"
                         target={link.external ? "_blank" : undefined}
                         rel={link.external ? "noopener noreferrer" : undefined}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                          setIsOpen(false)
+                          getAnalyticsClient().track(link.event as keyof typeof EVENTS, {})
+                        }}
                       >
                         {link.label}
                       </Link>
@@ -141,7 +154,10 @@ export function Navbar() {
                   size="lg"
                   className="w-full h-12 text-base"
                   asChild
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false)
+                    getAnalyticsClient().track("ADMIN_CLICKED", {})
+                  }}
                 >
                   <Link
                     href={siteConfig.getStarted}
@@ -155,7 +171,10 @@ export function Navbar() {
                   size="lg"
                   className="w-full h-12 text-base"
                   asChild
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false)
+                    getAnalyticsClient().track("BOOK_DEMO_CLICKED", {})
+                  }}
                 >
                   <Link
                     href={siteConfig.bookDemo}

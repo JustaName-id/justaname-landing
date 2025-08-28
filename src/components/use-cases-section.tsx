@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Wand, SquareUser, HandCoins, Sparkles, Share, Gift } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { getAnalyticsClient } from "../../analytics";
 
 export function UseCasesSection() {
   const { ref: titleRef, isInView: titleInView } = useScrollAnimation();
@@ -180,7 +181,7 @@ export function UseCasesSection() {
           style={{ transitionDelay: buttonInView ? '700ms' : '0ms' }}
         >
           <Button size="lg" asChild>
-            <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer">
+            <Link href={siteConfig.bookDemo} target="_blank" rel="noopener noreferrer" onClick={() => getAnalyticsClient().track("BOOK_DEMO_CLICKED", {})}>
               Book a Demo
             </Link>
           </Button>
