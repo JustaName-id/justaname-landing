@@ -3,7 +3,6 @@
 Landing page for JustAName - a decentralized naming service.
 
 ## Tech Stack
-
 - Next.js 15.5
 - React 19
 - TypeScript
