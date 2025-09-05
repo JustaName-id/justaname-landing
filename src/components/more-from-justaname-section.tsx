@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { getAnalyticsClient } from "../../analytics";
 
 export function MoreFromJustaNameSection() {
   const { ref: titleRef, isInView: titleInView } = useScrollAnimation();
@@ -41,6 +42,7 @@ export function MoreFromJustaNameSection() {
                 : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card1InView ? '100ms' : '0ms' }}
+              onClick={() => getAnalyticsClient().track("ENSVOLUTION_CLICKED", {})}
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
@@ -69,6 +71,7 @@ export function MoreFromJustaNameSection() {
                 : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card2InView ? '200ms' : '0ms' }}
+              onClick={() => getAnalyticsClient().track("LETS_TALK_CLICKED", {})}
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
@@ -100,6 +103,7 @@ export function MoreFromJustaNameSection() {
                 : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card3InView ? '300ms' : '0ms' }}
+              onClick={() => getAnalyticsClient().track("APP_CLICKED", {})}
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image
@@ -128,6 +132,7 @@ export function MoreFromJustaNameSection() {
                 : 'opacity-0 transform translate-y-8'
                 }`}
               style={{ transitionDelay: card4InView ? '400ms' : '0ms' }}
+              onClick={() => getAnalyticsClient().track("EXTENSION_CLICKED", {})}
             >
               <div className="h-[300px] lg:h-[400px] rounded overflow-hidden relative">
                 <Image

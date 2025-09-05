@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { getAnalyticsClient } from "../../analytics";
 
 export function OnboardingStepsSection() {
   const { ref: titleRef, isInView: titleInView } = useScrollAnimation();
@@ -123,7 +124,7 @@ export function OnboardingStepsSection() {
           style={{ transitionDelay: buttonInView ? '400ms' : '0ms' }}
         >
           <Button asChild>
-            <Link href={siteConfig.getStarted} target="_blank" rel="noopener noreferrer">
+            <Link href={siteConfig.getStarted} target="_blank" rel="noopener noreferrer" onClick={() => getAnalyticsClient().track("ADMIN_CLICKED", {})}>
               Get Started Now
             </Link>
           </Button>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { getAnalyticsClient } from "../../analytics";
 
 export function HowItWorksSection() {
   const { ref: titleRef, isInView: titleInView } = useScrollAnimation();
@@ -17,8 +18,8 @@ export function HowItWorksSection() {
           <h2
             ref={titleRef}
             className={`text-3xl lg:text-4xl font-normal text-zinc-900 text-center leading-tight lg:leading-[48px] transition-all duration-800 ease-out ${titleInView
-                ? 'opacity-100 transform translate-y-0'
-                : 'opacity-0 transform translate-y-8'
+              ? 'opacity-100 transform translate-y-0'
+              : 'opacity-0 transform translate-y-8'
               }`}
           >
             How it Works
@@ -30,8 +31,8 @@ export function HowItWorksSection() {
           <div
             ref={widgetRef}
             className={`border border-zinc-200 rounded-md p-6 lg:p-10 flex flex-col gap-6 transition-all duration-800 ease-out ${widgetInView
-                ? 'opacity-100 transform translate-x-0'
-                : 'opacity-0 transform -translate-x-8'
+              ? 'opacity-100 transform translate-x-0'
+              : 'opacity-0 transform -translate-x-8'
               }`}
             style={{ transitionDelay: widgetInView ? '100ms' : '0ms' }}
           >
@@ -86,7 +87,7 @@ export function HowItWorksSection() {
               </div>
             </div>
             <Button variant="outline" size="lg" className={"w-fit"} asChild>
-              <Link href={siteConfig.playground} target="_blank" rel="noopener noreferrer">
+              <Link href={siteConfig.playground} target="_blank" rel="noopener noreferrer" onClick={() => getAnalyticsClient().track("DEMO_CLICKED", {})}>
                 Try the Playground
               </Link>
             </Button>
@@ -96,8 +97,8 @@ export function HowItWorksSection() {
           <div
             ref={sdkRef}
             className={`bg-blue-50 rounded-md p-6 lg:p-10 flex flex-col gap-6 justify-between transition-all duration-800 ease-out ${sdkInView
-                ? 'opacity-100 transform translate-x-0'
-                : 'opacity-0 transform translate-x-8'
+              ? 'opacity-100 transform translate-x-0'
+              : 'opacity-0 transform translate-x-8'
               }`}
             style={{ transitionDelay: sdkInView ? '200ms' : '0ms' }}
           >
@@ -153,7 +154,7 @@ export function HowItWorksSection() {
             </div>
 
             <Button variant="outline" size="lg" className={"w-fit"} asChild>
-              <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer">
+              <Link href={siteConfig.docs} target="_blank" rel="noopener noreferrer" onClick={() => getAnalyticsClient().track("DOCS_CLICKED", {})}>
                 Check our Docs
               </Link>
             </Button>
