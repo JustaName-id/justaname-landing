@@ -21,7 +21,7 @@ class Index {
             posthog.init(key, {
                 api_host: host,
                 ui_host: 'https://eu.posthog.com', // toolbar/replay links resolve to the real app behind the proxy
-                capture_pageview: false,
+                capture_pageview: 'history_change', // capture pageviews on load + client-side navigation (no manual tracker exists)
                 capture_pageleave: true,
                 autocapture: true,
                 loaded: (posthog) => {
