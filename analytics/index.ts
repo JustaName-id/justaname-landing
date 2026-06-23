@@ -20,6 +20,7 @@ class Index {
             }
             posthog.init(key, {
                 api_host: host,
+                ui_host: 'https://eu.posthog.com', // toolbar/replay links resolve to the real app behind the proxy
                 capture_pageview: false,
                 capture_pageleave: true,
                 autocapture: true,
